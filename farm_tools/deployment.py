@@ -1,14 +1,12 @@
 from .settings import *
-from .settings import BASE_DIR
-import dj_database_url
 import os
-ALLOWED_HOSTS = [os.environ['RENDER_EXTERNAL_HOSTNAME']]
-CSRF_TRUSTED_ORIGINS = ['HTTPS://'+os.environ['RENDER_EXTERNAL_HOSTNAME']]
+from . settings import BASE_DIR
+import dj_database_url
 
-DEBUG = False
-SECRET_KEY = os.environ['SECRET_KEY']
-
-
+DEBUG= False
+ALLOWED_HOSTS= [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+CSRF_TRUSTED_ORIGINS =['https://'+os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+SECRET_KEY = os.environ.get('SECRET_KEY')
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -25,6 +23,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     # "http://localhost:3000",  
     # "http://127.0.0.1:3000",
+    "https://gray-river-03c16a403.4.azurestaticapps.net"
 ]
 
 STORAGES = {
@@ -37,23 +36,15 @@ STORAGES = {
 }
 
 
-#CONNECTION = os.environ['AZURE_POSTGRESQL_CONNECTION_STRING']
-#CONNECTION_STR = {pair.split('=')[0]: pair.split('=')[1] for pair in CONNECTION.split(' ')}
-
-
-DATABASES = {
-    'default' : dj_database_url.config(
-
-        #replace the value with ur local database connection string
-        default = os.environ["DATABASE_URL"],
-        conn_max_age = 600
+DATABASES ={
+    'default':dj_database_url.config(
+        default=os.environ['DATABASE_URL'],
+        conn_max_age=600
     )
-        
 }
-
-
-
-
 STATIC_ROOT =  BASE_DIR / 'staticfiles'
+
+
+
 
 
