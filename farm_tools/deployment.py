@@ -42,7 +42,9 @@ DATABASES ={
         conn_max_age=600
     )
 }
-STATIC_ROOT = str(BASE_DIR / 'staticfiles')
+
+STATIC_ROOT = str(BASE_DIR / "staticfiles")
+
 
 
 
