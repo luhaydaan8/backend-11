@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mt8dwjslum!+f&f+yp(ek+bh+z*^3=3^x=^u_s&+dlie34_(18
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-AUTH_USER_MODEL = 'farm_tools.User'
+# AUTH_USER_MODEL = "farm_tools.User"
 
 ALLOWED_HOSTS = ['https://backend-11-rfw3.onrender.com', 'localhost', '127.0.0.1', '*']  
 
