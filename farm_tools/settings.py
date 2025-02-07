@@ -24,8 +24,8 @@ SECRET_KEY = 'django-insecure-u2cm*e8dtl6v1at5xb)#175y$bzu!a*07!psq!7@j=(g&icy-i
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-AUTH_USER_MODEL = 'farm_tools.User'
-ALLOWED_HOSTS = ['https://backend-11-rfw3.onrender.com','localhost', '127.0.0.1', '*']
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -53,12 +53,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware', 
-    'whitenoise.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://white-island-0d89d8910.4.azurestaticapps.net/log",  # Frontend development URL
+    "http://localhost:3000",  # Frontend development URL
 ]
 
 
